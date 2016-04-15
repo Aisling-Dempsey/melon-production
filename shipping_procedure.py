@@ -38,6 +38,14 @@ class Melon(object):
 
 
 # FIXME: Add Squash class definition here.
+class Squash(Melon):
+    def __init__(self, melon_type):
+        super(Squash, self).__init__(melon_type)
+        self.melon_type = "Winter Squash"
+
+    def prep(self):
+        super(Squash,self).prep()
+        robots.painterbot.paint(self)
 
 
 def show_help():
@@ -123,7 +131,6 @@ def main():
 
             # Prepare the melon
             m.prep()
-            
             # Evaluate the melon
 
             presentable = robots.inspectorbot.evaluate(m)
